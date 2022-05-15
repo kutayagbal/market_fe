@@ -1,0 +1,26 @@
+{
+  "name": "market",
+  "version": "1.0.0",
+  "description": "a stock market application",
+  "main": "/src/js/compononts/BarChart.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": " wds --node-resolve --app-index market.html --open"
+  },
+  "author": "Kutay Agbal",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@web/dev-server": "^0.1.31",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "d3": "^7.4.4",
+    "lit": "^2.2.3"
+  }
+}
