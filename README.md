@@ -1,19 +1,25 @@
 # Market
 
-Market is a javascript client application as a stock market trading client application.
+Market is a javascript client application as a stock market trading client
 
 ## Installation
 
-Use the package manager npm to install dependencies.
+Use npm to install dependencies
 
 ```npm
 npm install
 ```
 
-## Usage
+## Start development server
+
+````npm
+npm start
+
+## Create bundle with webpack
 
 ```npm
-npm start
+npm run build
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+````
