@@ -12,14 +12,16 @@ npm install
 
 ## Start development server
 
-````npm
+```npm
 npm start
+```
 
 ## Create bundle with webpack
 
 ```npm
 npm run build
+```
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
-````
+
+[MIT]
