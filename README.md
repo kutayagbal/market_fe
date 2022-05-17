@@ -2,7 +2,7 @@
 
 Market is a javascript client application as a stock market trading client
 
-## Installation
+## Install dependencies
 
 Use npm to install dependencies
 
