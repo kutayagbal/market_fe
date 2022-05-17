@@ -1,5 +1,7 @@
 import { html, css, LitElement } from 'lit';
 import { moneyFormatter, rateFormatter } from './Util.js';
+import { LineGraph } from './LineGraph.js';
+import { LabelValueView } from './LabelValueView.js';
 
 export class Quote extends LitElement {
   static get styles() {
@@ -168,4 +170,5 @@ export class Quote extends LitElement {
   }
 }
 
-customElements.define('quote-elem', Quote);
+customElements.define('line-graph-elem', LineGraph);
+customElements.define('label-value-view', LabelValueView);

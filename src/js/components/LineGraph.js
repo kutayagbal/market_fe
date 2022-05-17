@@ -85,5 +85,3 @@ export class LineGraph extends LitElement {
     return html`<div />`;
   }
 }
-
-customElements.define('line-graph-elem', LineGraph);

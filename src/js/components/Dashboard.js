@@ -63,3 +63,4 @@ export class Dashboard extends LitElement {
 }
 
 customElements.define('dashboard-elem', Dashboard);
+customElements.define('quote-elem', Quote);

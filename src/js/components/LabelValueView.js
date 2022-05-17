@@ -52,5 +52,3 @@ export class LabelValueView extends LitElement {
     </div>`;
   }
 }
-
-customElements.define('label-value-view', LabelValueView);
