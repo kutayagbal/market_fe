@@ -30,7 +30,7 @@ export class Dashboard extends LitElement {
   }
 
   async firstUpdated() {
-    const request = new Request('http://localhost:8080/stock/stocks', {
+    const request = new Request('http://localhost:8080/stock/stocks?username=kkkkkk', {
       method: 'GET',
     });
 

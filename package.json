@@ -1,8 +1,8 @@
 {
   "name": "market",
   "version": "1.0.0",
-  "description": "a stock market application",
-  "main": "/src/js/compononts/BarChart.js",
+  "description": "Market is a javascript client application as a stock market trading client",
+  "main": "/src/js/compononts/Dashboard.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": " wds --node-resolve --app-index market.html --open"

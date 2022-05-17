@@ -1,6 +1,5 @@
 import { html, css, LitElement } from 'lit';
 import { moneyFormatter, rateFormatter } from './Util.js';
-import { LineGraph } from './LineGraph.js';
 
 export class Quote extends LitElement {
   static get styles() {

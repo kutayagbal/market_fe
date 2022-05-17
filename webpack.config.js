@@ -4,7 +4,7 @@ const path = require('path');
 // This is the main configuration object.
 module.exports = {
   // Path to your entry point. From this file Webpack will begin its work
-  entry: './src/js/components/BarChart.js',
+  entry: './src/js/components/Dashboard.js',
 
   // Path and filename of your result bundle.
   output: {

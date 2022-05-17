@@ -3,7 +3,7 @@ import { html, LitElement } from 'lit';
 
 export class BarChart extends LitElement {
   static get properties() {
-    return { graphData: { type: [Object] }, styleData: { type: Object } };
+    return { graphData: [{ label: String, value: Number }], styleData: { type: Object } };
   }
 
   constructor() {
@@ -14,11 +14,11 @@ export class BarChart extends LitElement {
       height: 200,
     };
     this.graphData = [
-      { label: 'Kutay', value: 10 },
-      { label: 'Agbal', value: 5 },
-      { label: 'Ali', value: 3 },
-      { label: 'Kemal', value: 8 },
-      { label: 'Ziya', value: 6 },
+      { label: 'Label1', value: 10 },
+      { label: 'Label2', value: 5 },
+      { label: 'Label3', value: 3 },
+      { label: 'Label4', value: 8 },
+      { label: 'Label5', value: 6 },
     ];
   }
 
@@ -55,48 +55,9 @@ export class BarChart extends LitElement {
     }
   };
 
-  // resetGraph() {
-  //   this._svg.remove().exit();
-  //   if (this.graphData.length > 0) {
-  //     this.generateVerticalBarChart();
-  //   }
-  // }
-
-  // componentDidUpdate() {
-  //   d3.select(this.shadowRoot.querySelector('svg')).select('#vertical_bar_chart_svg').remove().exit();
-
-  //   if (this.props.data) {
-  //     this.generateVerticalBarChartRef(this.props.data);
-  //   }
-  // }
-
-  // componentDidMount() {
-  //   const { parentElement } = document.getElementById('graph-svg');
-
-  //   this.setState({
-  //     width: parentElement.clientWidth - 150,
-  //     height: 300,
-  //     margin: { top: 10, right: 60, bottom: 50, left: 60 },
-  //   });
-
-  //   window.addEventListener('resize', this.handleResize);
-  // }
-
-  // componentWillUnmount() {
-  //   window.removeEventListener('resize', this.handleResize);
-  // }
-
   generateVerticalBarChart() {
     const { margin, width, height } = this.styleData;
-
-    // const svg = d3
-    //   .select(this.shadowRoot.querySelector('svg'))
-    //   // .append('svg')
-    //   .attr('id', 'vertical_bar_chart_svg')
-    //   .attr('width', width + margin.left + margin.right)
-    //   .attr('height', height + margin.top + margin.bottom);
     const svg = d3.select(this.shadowRoot.querySelector('svg'));
-    // svg.attr('margin');
 
     const chart = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
 

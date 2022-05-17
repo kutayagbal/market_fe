@@ -1,4 +1,4 @@
-import { html, css, LitElement } from 'lit';
+import { html, LitElement } from 'lit';
 import * as d3 from 'd3';
 
 export class LineGraph extends LitElement {
@@ -61,9 +61,8 @@ export class LineGraph extends LitElement {
     // set domain of the scales
     xAxisScale.domain(d3.extent(data, d => d.date));
     yAxisScale.domain(d3.extent(data, d => d.value));
-    // yAxisScale.domain([0, d3.max(data, d => d.value)]);
 
-    // Add graph path
+    // add graph path
     svg
       .append('path')
       .data([data])
