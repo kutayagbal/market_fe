@@ -26,7 +26,53 @@ export class Dashboard extends LitElement {
   static get properties() {
     return {
       quotes: { type: [Quote] },
+      socket: { type: WebSocket },
     };
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.connectSocket();
+  }
+
+  connectSocket() {
+    try {
+      this.socket = new WebSocket('ws://localhost:8080/socket?kkkkk');
+      console.log('connection state:', this.socket.readyState);
+    } catch (error) {
+      console.log('web socket connection error', error);
+      return;
+    }
+
+    this.socket.addEventListener('open', this.onSocketOpen);
+    this.socket.addEventListener('error', this.onSocketError);
+    this.socket.addEventListener('message', this.onSocketMessage);
+    this.socket.addEventListener('close', this.onSocketClose);
+  }
+
+  onSocketMessage = event => {
+    const quote = JSON.parse(event.data);
+    console.log('Websocket received message:', quote);
+    this.quotes = this.quotes.map(q => (q.name === quote.name ? quote : q));
+  };
+
+  onSocketError = event => {
+    console.log('Websocket error:', event);
+  };
+
+  onSocketOpen = event => {
+    console.log('Websocket opened', event);
+  };
+
+  onSocketClose = event => {
+    console.log('Websocket closed', event);
+  };
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    if (this.socket) {
+      this.socket.close();
+    }
   }
 
   async firstUpdated() {
